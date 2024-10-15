@@ -20,6 +20,8 @@
 const http = require("http");
 const fs = require("fs");
 
+const port = process.argv[2] || 5000; 
+
 let homeContent = "";
 let projectContent = "";
 let registrationContent = "";
@@ -77,4 +79,6 @@ http
         break;
     }
   })
-  .listen(5000);
+  .listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });;
